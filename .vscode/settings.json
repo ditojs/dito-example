@@ -1,0 +1,8 @@
+{
+    "eslint.enable": true,
+    "cSpell.words": [
+        "creatable",
+        "deletable",
+        "labelize"
+    ]
+}

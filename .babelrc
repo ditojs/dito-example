@@ -1,0 +1,30 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "9"
+        },
+        "useBuiltIns": "usage"
+      }
+    ],
+    [
+      "@babel/preset-stage-1"
+    ]
+  ],
+  "plugins": [
+    "dynamic-import-node-babel-7",
+    [
+      "module-resolver",
+      {
+        "cwd": "packagejson",
+        "alias": {
+          "~": ".",
+          "@": "./src/server"
+        }
+      }
+    ],
+    "transform-promise-to-bluebird"
+  ]
+}

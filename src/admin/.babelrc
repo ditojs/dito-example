@@ -1,0 +1,20 @@
+{
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": {
+        "browsers": [
+          "> 1%",
+          "last 2 versions",
+          "not ie <= 8"
+        ]
+      },
+      "useBuiltIns": "usage",
+      "modules": false
+    }],
+    ["@babel/preset-stage-1"]
+  ],
+  "plugins": [
+    "dynamic-import-node-babel-7"
+  ],
+  "comments": false
+}

@@ -1,0 +1,59 @@
+{
+  "name": "dito-example",
+  "version": "0.4.0",
+  "description": "",
+  "main": "src/server/app.js",
+  "repository": "https://github.com/ditojs/dito-example",
+  "author": "Jürg Lehni <juerg@scratchdisk.com> (http://scratchdisk.com)",
+  "license": "MIT",
+  "scripts": {
+    "db:create_migration": "dito db:create_migration src/server/app",
+    "db:migrate": "dito db:migrate src/config",
+    "db:rollback": "dito db:rollback src/config",
+    "db:reset": "dito db:reset src/config",
+    "db:seed": "dito db:seed src/server/app",
+    "console": "dito console src/server/app",
+    "start": "babel-node src/server",
+    "dev": "nodemon --watch src/server --watch src/config --exec 'yarn start'",
+    "debug": "cross-env DEBUG=* yarn start",
+    "inspect": "babel-node --inspect --debug-brk src/server",
+    "build": "babel src/server -d dist --copy-files --source-maps inline",
+    "serve": "node dist",
+    "lint": "cross-env NODE_ENV=production eslint src test migrations seeds",
+    "lint:fix": "eslint --fix src test migrations seeds",
+    "precommit": "yarn lint"
+  },
+  "engines": {
+    "node": ">= 9.0.0",
+    "yarn": ">= 1.0.0"
+  },
+  "dependencies": {
+    "@ditojs/server": "^0.4.0",
+    "@ditojs/utils": "^0.3.2",
+    "bluebird": "^3.5.1",
+    "knex": "0.14.3",
+    "koa-static": "^4.0.2",
+    "sqlite3": "^3.1.13"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.40",
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/node": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
+    "@babel/preset-stage-1": "^7.0.0-beta.40",
+    "babel-eslint": "8.2.1",
+    "babel-plugin-dynamic-import-node-babel-7": "^2.0.6",
+    "babel-plugin-module-resolver": "^3.1.0",
+    "babel-plugin-transform-promise-to-bluebird": "^2.0.0-beta.1",
+    "cross-env": "^5.1.3",
+    "eslint": "^4.18.1",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "faker": "^4.1.0",
+    "husky": "^0.14.2",
+    "nodemon": "^1.17.1"
+  }
+}
