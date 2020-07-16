@@ -5,17 +5,19 @@ export const dummies = {
   label: 'Dummies',
   form: import('./dummy'),
   itemLabel: 'fullName',
-
+  resource: {
+    path: 'dummies'
+  },
   columns: {
     prefix: {
       sortable: true,
-      render: prefix => `${labelize(prefix)}.`
+      render: ({ value }) => `${labelize(value)}.`
     },
     firstName: { sortable: true },
     lastName: { sortable: true },
     country: { sortable: true },
     tags: {
-      render: tags => (tags || []).join(', ')
+      render: ({ value = [] }) => value.join(', ')
     }
   },
   scopes: ['all', 'verified'],
