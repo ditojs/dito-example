@@ -1,13 +1,28 @@
 export default {
   log: {
-    server: true,
-    schema: false,
+    request: true,
     routes: false,
+    schema: false,
+    relations: false,
     sql: false
   },
+
   app: {
-    etag: false
+    // Only required for Dito.js Admin development to work on different port:
+    cors: {
+      credentials: true
+    }
   },
+
+  admin: {
+    api: {
+      // Only required for Dito.js Admin development to work on different port:
+      cors: {
+        credentials: true
+      }
+    }
+  },
+
   knex: {
     client: 'sqlite3',
     useNullAsDefault: true,

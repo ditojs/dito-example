@@ -1,41 +1,69 @@
-import { deepMerge } from '@ditojs/utils'
+import { merge } from '@ditojs/utils'
 
 const { env } = process
 
-const defaultConfig = {
-  env: env.NODE_ENV || 'development',
+const mode = env.NODE_ENV || 'development'
+const host = env.NODE_HOST || env.HOST || '0.0.0.0'
+const port = env.NODE_PORT || env.PORT || 8080
+
+const config = {
+  env: mode,
+
   server: {
-    host: env.NODE_HOST || env.HOST || '0.0.0.0',
-    port: env.NODE_PORT || env.PORT || 8080
+    host,
+    port
   },
+
   log: {
-    server: false,
-    schema: false,
+    request: false,
     routes: false,
+    schema: false,
+    relations: false,
     sql: false
   },
+
   app: {
     normalizePaths: true,
     keys: ['secret sauce'],
     proxy: true,
     session: true,
     passport: true,
+    etag: true,
     csrf: true
   },
+
   knex: {
     normalizeDbNames: true
     // Details to be defined in `config.local.js` / `config.ENV.js`
   },
-  admin: { // Used by LinetoAdminController
-    dev: true,
+
+  admin: { // Used by AdminController
+    mode: 'production',
     build: {
-      path: './src/admin'
+      path: './src/admin',
+      eslint: false
     },
-    template: './src/admin/index.html',
-    include: [
-      './src/admin/style.sass'
-    ]
-  }
+    dist: {
+      path: 'dist/src/admin'
+    },
+    api: {
+      url: '/api/admin/',
+      notifications: {
+        // The amount of milliseconds multiplied with the amount of characters
+        // displayed in the notification, plus 40 (40 + title + message):
+        durationFactor: 30
+      }
+    },
+    // Additional settings can be exposed to the browser side through the
+    // `settings` object, accessible as `global.dito.settings` in the browser.
+    settings: {
+      env: mode
+    }
+  },
+
+  storages: {},
+
+  services: {}
 }
 
 function loadConfig(type) {
@@ -47,10 +75,8 @@ function loadConfig(type) {
   }
 }
 
-const config = deepMerge(
-  defaultConfig,
+export default merge(
+  config,
   loadConfig('local'),
-  loadConfig(defaultConfig.env)
+  loadConfig(config.env)
 )
-
-export default config
