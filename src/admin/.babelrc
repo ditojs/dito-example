@@ -9,12 +9,12 @@
         ]
       },
       "useBuiltIns": "usage",
+      "corejs": 3,
       "modules": false
-    }],
-    ["@babel/preset-stage-1"]
+    }]
   ],
   "plugins": [
-    "dynamic-import-node-babel-7"
+    "dynamic-import-node"
   ],
   "comments": false
 }

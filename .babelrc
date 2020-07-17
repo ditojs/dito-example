@@ -6,15 +6,14 @@
         "targets": {
           "node": "9"
         },
-        "useBuiltIns": "usage"
+        "useBuiltIns": "usage",
+        "corejs": 3
       }
     ],
-    [
-      "@babel/preset-stage-1"
-    ]
+    "@ditojs/babel-preset"
   ],
   "plugins": [
-    "dynamic-import-node-babel-7",
+    "@babel/plugin-transform-runtime",
     [
       "module-resolver",
       {
@@ -25,6 +24,8 @@
         }
       }
     ],
+    "transform-export-extensions",
+    "dynamic-import-node",
     "transform-promise-to-bluebird"
   ]
 }

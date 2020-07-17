@@ -28,7 +28,9 @@ const defaultConfig = {
   },
   admin: { // Used by LinetoAdminController
     dev: true,
-    path: './src/admin',
+    build: {
+      path: './src/admin'
+    },
     template: './src/admin/index.html',
     include: [
       './src/admin/style.sass'

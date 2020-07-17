@@ -1,12 +1,13 @@
 import DitoAdmin from '@ditojs/admin'
-import * as views from './views'
 
-DitoAdmin.setup('#dito-admin', {
-  views,
-
-  api: {
-    url: 'http://localhost:8080/api/admin/',
-    normalizePaths: true
+new DitoAdmin('#dito-admin', {
+  views: import('./views'),
+  dito: {
+    api: {
+      url: 'http://localhost:8080/api/admin/',
+      normalizePaths: true,
+      users: 'users'
+    }
   },
 
   base: '/admin'
