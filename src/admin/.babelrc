@@ -5,16 +5,24 @@
         "browsers": [
           "> 1%",
           "last 2 versions",
-          "not ie <= 8"
+          "not ie <= 11"
         ]
       },
-      "useBuiltIns": "usage",
       "corejs": 3,
+      "useBuiltIns": "usage",
       "modules": false
-    }]
+    }],
+    "@ditojs/babel-preset"
   ],
   "plugins": [
-    "dynamic-import-node"
+    ["module-resolver", {
+      "cwd": "babelrc",
+      "alias": {
+        "~": "../..",
+        "@": "."
+      }
+    }],
+    "@babel/plugin-transform-runtime"
   ],
   "comments": false
 }
