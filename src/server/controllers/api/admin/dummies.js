@@ -7,7 +7,7 @@ export class Dummies extends ModelController {
   graph = true
 
   collection = {
-    allow: ['find', 'post']
+    allow: ['find', 'insert']
   }
 
   member = {
