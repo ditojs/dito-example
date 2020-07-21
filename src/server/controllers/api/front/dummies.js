@@ -8,16 +8,19 @@ export class Dummies extends ModelController {
     allow: ['find', 'hello'],
 
     @action('get')
-    @parameters({
-      name: 'msg',
-      type: 'string',
-      required: true
-    })
+    @parameters(
+      { member: true },
+      {
+        name: 'msg',
+        type: 'string',
+        required: true
+      }
+    )
     @returns({
       name: 'greeting',
       type: 'string'
     })
-    hello(dummy, msg) {
+    hello(ctx, dummy, msg) {
       return `Hello ${dummy.fullName}: ${msg}`
     }
   }
