@@ -5,6 +5,7 @@ export class Dummies extends ModelController {
   modelClass = Dummy
   eagerScope = 'admin'
   graph = true
+  authorize = ctx => ctx.isAuthenticated()
 
   collection = {
     allow: ['find', 'insert']
