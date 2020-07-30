@@ -1,5 +1,5 @@
-export function up(knex) {
-  return knex.schema
+export async function up(knex) {
+  await knex.schema
     .createTable('message', table => {
       table.increments('id').primary()
       table.integer('dummy_id').unsigned()
@@ -10,7 +10,7 @@ export function up(knex) {
     })
 }
 
-export function down(knex) {
-  return knex.schema
+export async function down(knex) {
+  await knex.schema
     .dropTableIfExists('message')
 }
