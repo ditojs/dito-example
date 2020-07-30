@@ -15,7 +15,7 @@
     "console": "dito console src/server/app",
     "start": "babel-node src/server",
     "watch": "nodemon --watch src/server --watch src/config --exec 'yarn start'",
-    "watch:dito": "nodemon --watch src/server --watch src/config --watch ../../dito/packages/server/lib  --watch ../../dito/packages/utils/lib --watch ../../dito/packages/router/lib --watch ../../objection.js --watch ../../knex --exec 'yarn run start'",
+    "watch:dito": "nodemon --watch src/server --watch src/config --watch ../dito/packages/server/lib  --watch ../dito/packages/utils/lib --watch ../dito/packages/router/lib --watch ../objection.js --watch ../knex --exec 'yarn run start'",
     "dev": "cross-env NODE_ENV=development yarn run watch",
     "dev:dito": "cross-env NODE_ENV=development yarn run watch:dito",
     "debug": "cross-env DEBUG=* yarn start",
