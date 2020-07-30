@@ -81,7 +81,10 @@ export class Dummy extends TimeStampedModel {
     messages: {
       relation: 'hasMany',
       from: 'Dummy.id',
-      to: 'Message.dummyId'
+      to: 'Message.dummyId',
+      // This is required so that nested content can be altered in the graph.
+      // Without it, only relates are allowed:
+      owner: true
     }
   }
 
