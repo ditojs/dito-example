@@ -132,5 +132,15 @@ export const dummy = {
         }
       }
     }
+  },
+
+  buttons: {
+    apply: {
+      text: 'Apply',
+      resource: {
+        method: 'patch'
+      },
+      if: ({ formComponent }) => !formComponent.isCreating
+    }
   }
 }
