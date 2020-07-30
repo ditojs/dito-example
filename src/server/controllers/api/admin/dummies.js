@@ -3,7 +3,7 @@ import { Dummy } from '@/models'
 
 export class Dummies extends ModelController {
   modelClass = Dummy
-  eagerScope = 'admin'
+  scope = '^admin'
   graph = true
 
   collection = {
