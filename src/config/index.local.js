@@ -1,7 +1,7 @@
 export default {
   log: {
     request: true,
-    routes: false,
+    routes: true,
     schema: false,
     relations: false,
     sql: false

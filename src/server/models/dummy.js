@@ -11,7 +11,7 @@ export class Dummy extends TimeStampedModel {
     all: query => query,
 
     admin: query => query
-      .mergeEager('messages')
+      .withGraph('messages')
   }
 
   static properties = {
