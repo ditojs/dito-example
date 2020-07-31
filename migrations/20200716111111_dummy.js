@@ -1,5 +1,5 @@
-export function up(knex) {
-  return knex.schema
+export async function up(knex) {
+  await knex.schema
     .createTable('dummy', table => {
       table.increments('id').primary()
       table.string('first_name').notNullable()
@@ -19,7 +19,7 @@ export function up(knex) {
     })
 }
 
-export function down(knex) {
-  return knex.schema
+export async function down(knex) {
+  await knex.schema
     .dropTableIfExists('dummy')
 }

@@ -15,7 +15,7 @@
     "console": "dito console src/server/app",
     "start": "babel-node src/server",
     "watch": "nodemon --watch src/server --watch src/config --exec 'yarn start'",
-    "watch:dito": "nodemon --watch src/server --watch src/config --watch ../../dito/packages/server/lib  --watch ../../dito/packages/utils/lib --watch ../../dito/packages/router/lib --watch ../../objection.js --watch ../../knex --exec 'yarn run start'",
+    "watch:dito": "nodemon --watch src/server --watch src/config --watch ../dito/packages/server/lib  --watch ../dito/packages/utils/lib --watch ../dito/packages/router/lib --watch ../objection.js --watch ../knex --exec 'yarn run start'",
     "dev": "cross-env NODE_ENV=development yarn run watch",
     "dev:dito": "cross-env NODE_ENV=development yarn run watch:dito",
     "debug": "cross-env DEBUG=* yarn start",
@@ -39,7 +39,6 @@
     "@ditojs/utils": "^0.150.0",
     "bluebird": "^3.7.2",
     "core-js": "^3.6.5",
-    "current-script-polyfill": "^1.0.0",
     "knex": "^0.21.2",
     "koa-static": "^5.0.0",
     "sqlite3": "^5.0.0"

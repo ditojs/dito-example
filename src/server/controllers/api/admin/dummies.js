@@ -3,9 +3,9 @@ import { Dummy } from '@/models'
 
 export class Dummies extends ModelController {
   modelClass = Dummy
-  eagerScope = 'admin'
+  scope = '^admin'
   graph = true
-  authorize = ctx => ctx.isAuthenticated()
+  authorize = ['admin', 'editor']
 
   collection = {
     allow: ['find', 'insert']

@@ -125,13 +125,22 @@ export const dummy = {
           type: 'list',
           width: '100%',
           form: import('./message'),
-          inline: true,
-          nested: true,
+          inlined: true,
           creatable: true,
           draggable: true,
           deletable: true
         }
       }
+    }
+  },
+
+  buttons: {
+    apply: {
+      text: 'Apply',
+      resource: {
+        method: 'patch'
+      },
+      if: ({ formComponent }) => !formComponent.isCreating
     }
   }
 }

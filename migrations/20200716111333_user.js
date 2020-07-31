@@ -5,6 +5,7 @@ export async function up(knex) {
       table.string('username').notNullable()
       table.string('hash')
       table.timestamp('last_login').nullable()
+      table.json('roles')
     })
 }
 
