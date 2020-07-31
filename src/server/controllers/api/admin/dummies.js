@@ -5,6 +5,7 @@ export class Dummies extends ModelController {
   modelClass = Dummy
   scope = '^admin'
   graph = true
+  authorize = ['admin', 'editor']
 
   collection = {
     allow: ['find', 'insert']
