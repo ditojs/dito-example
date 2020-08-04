@@ -1,14 +1,20 @@
 import DitoAdmin from '@ditojs/admin'
 
 new DitoAdmin('#dito-admin', {
-  views: import('./views'),
-  dito: {
-    api: {
-      url: 'http://localhost:8080/api/admin/',
-      normalizePaths: true,
-      users: 'users'
+  // The `dito` object is provided by AdminController, and passes on settings
+  // from `config.admin.api` and other bits.
+  dito,
+  // NOTE: `api` gets merged with `config.admin.api`, so here we provide the
+  // settings that are more related to code than config, mostly functions:
+  api: {
+    dateFormat: {
+      // When using short format (options.month === '2-digit'),
+      // replace the UK date separators '/' with '.'.
+      format: (value, type, options) =>
+        type === 'literal' && value === '/' && options.month === '2-digit'
+          ? '.'
+          : value
     }
   },
-
-  base: '/admin'
+  views: import('./views')
 })

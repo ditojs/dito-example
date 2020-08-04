@@ -48,6 +48,9 @@ const config = {
     },
     api: {
       url: '/api/admin/',
+      users: {
+        path: 'users'
+      },
       notifications: {
         // The amount of milliseconds multiplied with the amount of characters
         // displayed in the notification, plus 40 (40 + title + message):
