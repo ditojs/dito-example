@@ -41,6 +41,8 @@
     "core-js": "^3.6.5",
     "knex": "^0.21.2",
     "koa-static": "^5.0.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.2",
     "sqlite3": "^5.0.0"
   },
   "devDependencies": {

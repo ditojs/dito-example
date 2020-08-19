@@ -1,4 +1,5 @@
 import DitoAdmin from '@ditojs/admin'
+import './style.sass'
 
 new DitoAdmin('#dito-admin', {
   // The `dito` object is provided by AdminController, and passes on settings

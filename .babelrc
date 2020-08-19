@@ -19,5 +19,6 @@
     }],
     "dynamic-import-node",
     "transform-promise-to-bluebird"
-  ]
+  ],
+  "comments": false
 }
