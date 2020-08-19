@@ -35,8 +35,8 @@
     "yarn": ">= 1.0.0"
   },
   "dependencies": {
-    "@ditojs/server": "^0.151.0",
-    "@ditojs/utils": "^0.151.0",
+    "@ditojs/server": "^0.152.0",
+    "@ditojs/utils": "^0.152.0",
     "bluebird": "^3.7.2",
     "core-js": "^3.6.5",
     "knex": "^0.21.2",
@@ -49,7 +49,7 @@
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.0",
     "@babel/node": "^7.10.5",
-    "@ditojs/babel-preset": "^0.151.0",
+    "@ditojs/babel-preset": "^0.152.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-dynamic-import-node": "^2.3.3",
     "babel-plugin-module-resolver": "^4.0.0",
