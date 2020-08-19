@@ -15,6 +15,7 @@ export default {
   },
 
   admin: {
+    mode: 'development',
     api: {
       // Only required for Dito.js Admin development to work on different port:
       cors: {
