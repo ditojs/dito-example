@@ -38,7 +38,7 @@ const config = {
   },
 
   admin: { // Used by AdminController
-    mode: 'production',
+    mode: mode === 'development' ? 'development' : 'production',
     build: {
       path: './src/admin',
       eslint: false
