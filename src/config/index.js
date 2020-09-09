@@ -15,7 +15,7 @@ const config = {
   },
 
   log: {
-    request: false,
+    requests: false,
     routes: false,
     schema: false,
     relations: false,

@@ -1,6 +1,6 @@
 export default {
   log: {
-    request: true,
+    requests: true,
     routes: false,
     schema: false,
     relations: false,
