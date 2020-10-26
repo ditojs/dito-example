@@ -28,8 +28,7 @@ const config = {
     proxy: true,
     session: true,
     passport: true,
-    etag: true,
-    csrf: true
+    etag: true
   },
 
   knex: {
