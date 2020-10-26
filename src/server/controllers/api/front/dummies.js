@@ -33,7 +33,7 @@ export class Dummies extends ModelController {
       type: 'string'
     })
     async wait() {
-      await Promise.delay(1000)
+      await new Promise(resolve => setTimeout(resolve, 1000))
       return 'One second has passed.'
     }
   }
