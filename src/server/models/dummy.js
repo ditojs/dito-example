@@ -88,6 +88,13 @@ export class Dummy extends TimeStampedModel {
     }
   }
 
+  static filters = {
+    name: {
+      filter: 'text',
+      properties: ['firstName', 'lastName']
+    }
+  }
+
   get fullName() {
     return `${this.firstName} ${this.lastName}`
   }

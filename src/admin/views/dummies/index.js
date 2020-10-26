@@ -20,6 +20,9 @@ export const dummies = {
       render: ({ value = [] }) => value.join(', ')
     }
   },
+  filters: {
+    name: { filter: 'text' }
+  },
   scopes: ['all', 'verified'],
   creatable: true,
   deletable: true,
