@@ -55,8 +55,8 @@ export const dummy = {
           searchable: true,
           placeholder: 'Select or search country',
           options: {
-            data() {
-              return this.load({
+            data({ request }) {
+              return request({
                 url: 'https://cdn.rawgit.com/lukes/ISO-3166-Countries-with-Regional-Codes/d4031492/all/all.json',
                 cache: 'global'
               })
