@@ -31,17 +31,18 @@
     "precommit": "yarn lint"
   },
   "engines": {
-    "node": ">= 10.0.0",
+    "node": ">= 14.0.0",
     "yarn": ">= 1.0.0"
   },
   "dependencies": {
-    "@ditojs/server": "^0.153.0",
-    "@ditojs/utils": "^0.153.0",
+    "@ditojs/server": "^0.174.0",
+    "@ditojs/utils": "^0.174.0",
     "bluebird": "^3.7.2",
     "core-js": "^3.6.5",
     "knex": "^0.21.5",
     "koa-static": "^5.0.0",
     "node-sass": "^4.14.1",
+    "objection": "^2.2.3",
     "sass-loader": "^10.0.1",
     "sqlite3": "^5.0.0"
   },
