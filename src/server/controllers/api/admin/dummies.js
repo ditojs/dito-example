@@ -7,7 +7,13 @@ export class Dummies extends ModelController {
   graph = true
 
   collection = {
-    allow: ['find', 'insert']
+    allow: ['find', 'insert'],
+    find: {
+      verb: 'get',
+      handler(ctx) {
+        return super.find(ctx)
+      }
+    }
   }
 
   member = {
