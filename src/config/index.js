@@ -45,6 +45,7 @@ const config = {
     dist: {
       path: 'dist/src/admin'
     },
+    plugins: ['@vue/cli-plugin-babel'],
     api: {
       url: '/api/admin/',
       users: {
