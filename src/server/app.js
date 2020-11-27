@@ -6,7 +6,8 @@ import * as controllers from './controllers'
 import * as schema from './schema'
 
 const validator = new Validator(schema)
-const app = new Application(config, {
+const app = new Application({
+  config,
   validator,
   models,
   controllers
